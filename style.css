@@ -1,0 +1,161 @@
+html, body {
+  height: 100%; /*高さを100%にして描画エリアをとる*/
+  margin: auto;
+  text-align: center;
+  background-size: cover;
+}
+
+#particles-js {
+  position: fixed; /*描画固定*/
+  z-index: -1; /*描画を一番下に*/
+  width: 100%;
+  height: 100%;
+  background-color: rgb(80, 150, 174); /*背景色*/
+}
+
+#wrapper {
+  position: relative; /*描画を#particles-jsよりも上にするためposition:relative;を指定*/
+  z-index: 1; /*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+  width: 100%;
+  height: 100%;
+}
+
+.fadeIn {
+  animation-name: fadeInAnime;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+header {
+  position: fixed; /* ヘッダーを固定する */
+  width: 100%; /* ヘッダーの横幅を指定する */
+  /* ヘッダーの高さを指定する */
+  padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+  background-color: rgba(0, 255, 255, 0.55);
+  height: 30px;
+  font-size: 30px;
+  color: deepskyblue;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, 0px 1px 0 #000000, -1px 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}
+
+button {
+  color: #ff69b4;
+  background-color: rgb(4, 72, 72);
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, 0px 1px 0 #000000, -1px 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000;
+}
+
+#wrapper {
+  position: relative; /*描画を#particles-jsよりも上にするためposition:relative;を指定*/
+  z-index: 1; /*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+  width: 100%;
+  height: 100%;
+}
+
+.details {
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, 0px 1px 0 #000000, -1px 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000;
+  color: #d590b2;
+  line-height: 2;
+  border: 1px solid red;
+  width: 80%;
+  margin: 0 auto 20px;
+}
+.details__summary {
+  position: relative;
+  display: block;
+  background: rgba(40, 85, 220, 0.462745098);
+  cursor: pointer;
+  margin: 0;
+  padding: 10px 40px 10px 16px;
+}
+.details__summary::-webkit-details-marker {
+  display: none;
+}
+.details__summary::before {
+  display: block;
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: calc(50% - 6px);
+  right: 16px;
+  width: 6px;
+  height: 6px;
+  border: 6px solid transparent;
+  border-left: 6px solid #ff0000;
+  transition: all 0.4s ease-out;
+  transform-origin: 3px 6px;
+  transform: rotate(90deg);
+}
+.details[open] .details__summary::before {
+  transform: rotate(-90deg);
+}
+.details__content {
+  overflow: hidden;
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.details__content > * {
+  margin: 0;
+  padding-top: 16px;
+}
+.details__content > *:last-child {
+  padding-bottom: 16px;
+}
+
+footer {
+  background-color: rgba(0, 255, 255, 0.55);
+  text-align: center;
+  height: 50px;
+}
+
+#langChenge input[type=radio] {
+  display: none;
+}
+
+/* === 各ラジオボタンのラベルをボタンに変更 == */
+#langChenge label {
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px #999;
+  padding: 2px 6px;
+}
+
+/* === 選択されていない言語は非表示にする ==== */
+#langJa:not(:checked) ~ * *:lang(ja) {
+  display: none;
+}
+
+#langEn:not(:checked) ~ * *:lang(en) {
+  display: none;
+}
+
+#langZh:not(:checked) ~ * *:lang(zh) {
+  display: none;
+}
+
+/* === 選択されている言語のラベル色を変更 ==== */
+#langJa:checked ~ label[for=langJa] {
+  background: #ffa64d;
+}
+
+#langEn:checked ~ label[for=langEn] {
+  background: #ffa64d;
+}
+
+#langZh:checked ~ label[for=langZh] {
+  background: #ffa64d;
+}/*# sourceMappingURL=style.css.map */
